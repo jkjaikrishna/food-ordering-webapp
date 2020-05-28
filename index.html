@@ -7,7 +7,51 @@
     <link rel= "stylesheet" type="text/css" href= "style.css" />
 </head>
 <body>
-    <h1>Food ordering app</h1>
+    <header class= "header-section">
+        <nav class= "navbar-section">
+            <h1>Food ordering app</h1>
+        </nav>
+        <div class= "layer-1">
+            <div class= "search-bar">
+                <input 
+                    type= "text" 
+                    placeholder="Search Restaurents.." 
+                    onkeyup= "searchRestaurents(event.target.value)"
+                    />
+                <button type= "submit">search</button>
+            </div>
+            <div class= "favourites">
+                <p>favourites</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class= "layer-2">
+            <div class= "sort-section">
+                <select name= "sort" id= "sort" onchange= "sortOption()" >
+                    <option value= "" disabled>Select option</option>
+                    <option value= "eta">ETA</option>
+                    <option value= "rating">rating</option>
+                </select>
+            </div>
+            <div class= "filter-section">
+                <select name= "filter" id= "filter" onchange= "filterTag()" >
+                    <option value= "" disabled>Select Tag</option>
+                </select>
+            </div>
+        </div>
+        <div class= "restaurents-view" id= "restaurents-view">
+            <div class= "card">
+                <img class= "card-image" src= "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/dzfrhyygasypi5zep2iy" alt= "" />
+                <div class= "card-name">All Day Bakes and Cafe</div>
+                <div class= "card-features">
+                    <div class= "rating">Rating: 4.1</div>
+                    <div class= "card-eta">ETA: 20 mins</div>
+                </div>
+                <div class= "location">Kazhakuttom</div>
+            </div>
+        </div>
+    </main>
     <script type= "text/javascript" src= "script.js" />
 </body>
 </html>

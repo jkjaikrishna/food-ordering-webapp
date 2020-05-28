@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header-section, main {
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.navbar-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navbar-section h1 {
+    width: 20%;
+}
+
+.layer-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar {
+    flex: 3;
+}
+
+.search-bar input {
+    height: 45px;
+    width: 80%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    height: 45px;
+    padding: 10px 25px;
+}
+
+.favourites {
+    flex: 1;
+}
+
+main {
+    margin-top: 40px;
+}
+
+.layer-2 {
+    display: flex;
+}
+
+.sort-section select, .filter-section select {
+    height: 35px;
+    width: 150px;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-right: 40px;
+}
+
+.restaurents-view {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 23%;
+    margin: 0 1%;
+    max-height: 400px;
+    padding: 0px 0px 15px;
+    border-radius: 4px;
+    border: 1px solid #afafaf;
+    transition: 0.4s box-shadow;
+}
+
+.card:hover {
+    -webkit-box-shadow: 0px 5px 31px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 31px -5px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 31px -5px rgba(0,0,0,0.5);
+}
+
+.card .card-image {
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.card-name, .card-features, .location {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-features {
+    color: #9a9a9a;
+    display: flex;
+    justify-content: space-between;
+}
+
+.location {
+    color: #9a9a9a;
+}
