@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 .header-section, main {
     width: 100%;
     padding: 10px 15px;
@@ -69,6 +74,7 @@ main {
 }
 
 .card {
+    position: relative;
     box-sizing: border-box;
     width: 23%;
     margin: 0 1%;
@@ -96,17 +102,29 @@ main {
     padding: 0 10px;
 }
 
-.card-name {
+.card .card-name {
     font-size: 18px;
     font-weight: 600;
 }
 
-.card-features {
+.card .card-features {
     color: #9a9a9a;
     display: flex;
     justify-content: space-between;
 }
 
-.location {
+.card .location {
     color: #9a9a9a;
+}
+
+.card .favourite {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .favourite:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }

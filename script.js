@@ -39,6 +39,7 @@ let restaurents = [
 ];
 
 localStorage.restaurentsArray = JSON.stringify(restaurents);
+localStorage.favouritesList = JSON.stringify([]);
 
 const restaurentsView = document.getElementById("restaurents-view");
 const filter = document.getElementById('filter');
@@ -55,6 +56,7 @@ getCard = restaurent => {
                         <div class= "card-eta">ETA: ${restaurent.ETA}</div> \
                     </div> \
                 <div class= "location">${restaurent.location}</div>\
+                <img class= "favourite" src= "assets/icons/favourites-filled.png" alt= "favourites" onclick= "updateFavourites(${restaurent.id})" /> \
             </div>`;
 };
 
@@ -120,7 +122,48 @@ compare = (a, b) => {
     if(b > a) return -1;
 
     return 0;
+ };
+
+ listFavourites = () => {
+    let favourites = localStorage.favouritesList && JSON.parse(localStorage.favouritesList);
+    if(favourites) {
+        let favouritesRestaurents = restaurents.filter(restaurent => {
+            return favourites.find(item => item === restaurent.id);
+        });
+        generateView(favouritesRestaurents);
+        console.log('scscscsc', favouritesRestaurents);
+    }
+    else {
+        console.log('xvvvvvvdvvdvdv');
+    }
  }
+
+ updateFavourites = (id) => {
+    console.log(id);
+    let selectedRestaurent = restaurents.find(restaurent => restaurent.id === id);
+    let favouritesList = localStorage.favouritesList || [];
+    favouritesList = JSON.parse(favouritesList);
+    if(favouritesList.length) {
+        //check item already exist in thr list
+        let itemIndex = favouritesList.findIndex(favourite => favourite === selectedRestaurent.id);
+        console.log('itemIndex', itemIndex);
+        if(itemIndex === -1) {
+            favouritesList.push(selectedRestaurent.id);
+            window.alert('added to Favourites list');
+        }
+        else {
+            //remove from list
+            favouritesList.splice(itemIndex, 1);
+            window.alert('Removed to Favourites list');
+        }
+    }
+    else {
+        favouritesList.push(selectedRestaurent.id);
+        window.alert('added to Favourites list');
+    }
+    localStorage.favouritesList = JSON.stringify(favouritesList);
+
+ };
 
 listTags(restaurents);
 generateView(restaurents);
